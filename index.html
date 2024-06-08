@@ -25,186 +25,120 @@
   <!-- font wesome stylesheet -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <!-- <link href="css/style.css" rel="stylesheet" /> -->
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
-
-
-
-
   <link rel="stylesheet" href="css/css-circular-prog-bar.css">
+  <style>
+    .btn-custom {
+      background-color: lightpink;
+      border-radius: 35px;      
+      border: solid; /* Remove the outline border */
+      padding: 15px 30px; /* Increase padding to make the button larger */
+      font-size: 2.25rem; /* Increase font size */
+      font-weight: bold;
+      width: 100%;
+    }
+    .btn-custom:hover {
+      background-color: #ffccd5; /* Slightly darker pink on hover */
+    }
+
+    @media (min-width: 768px) {
+      .big-text {
+        font-size: 120px; /* Adjust as needed */
+      }
+    }
+    
+  </style>
 
 
 </head>
-
 <body>
-  <div class="top_container">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <!-- <span>
-              Fanadesh
-            </span> -->
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html"> Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="about.html"> About </a>
-                </li>
-
-                <li class="nav-item ">
-                  <a class="nav-link" href="admission.html"> Admission </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="why.html"> Why Us </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-
-              </ul>
-            </div>
-        </nav>
+  <div class="container">
+    <!-- Button Rows -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-12 col-md mb-3">
+        <button type="button" class="btn btn-custom btn-block">
+          <img 
+            src="images/index/sun.png" 
+            alt="Icon" 
+            style="position:absolute;top:-20px;left:-15px;width:100px;height:100px;"
+          > HOME
+        </button>
       </div>
-    </header>
-    <section class="hero_section ">
-      <div class="hero-container container">
-        <div class="hero_detail-box">
-          <h1>
-            LEARN AND DO READING
-          </h1>
-          <p>
-            FOR EARLY LEARNERS
-          </p>
-          <div class="hero_btn-continer">
-            <a href="" class="call_to-btn btn_white-border">
-              START
-            </a>
-          </div>
-        </div>
-        <div class="hero_img-container">
-          <div>
-            <img src="images/hero.png" alt="" class="img-fluid">
-          </div>
-        </div>
+      <div class="col-12 col-md-auto mb-3"></div> <!-- Empty column for gap -->
+      <div class="col-12 col-md mb-3">
+        <button type="button" class="btn btn-custom btn-block">
+          <img 
+            src="images/index/arrow.png" 
+            alt="Icon" 
+            style="position:absolute;top:-20px;left:-15px;width:100px;height:100px;"
+          >
+          ABOUT
+          <img 
+          src="images/index/flower.png" 
+          alt="Icon" 
+          style="position:absolute;top:-20px;right:-15px;width:100px;height:100px;"
+        ></button>
       </div>
-    </section>
+      <div class="col-12 col-md-auto mb-3"></div> <!-- Empty column for gap -->
+      <div class="col-12 col-md mb-3">
+        <button type="button" class="btn btn-custom btn-block">STUDY GUIDE
+          <img 
+          src="images/index/pipe.png" 
+          alt="Icon" 
+          style="position:absolute;top:-20px;right:-30px;width:100px;height:100px;"
+        >
+        </button>
+      </div>
+    </div>
+    <!-- Text Row -->
+    <div class="row justify-content-center mb-3">
+      <div class="col-12 text-center big-text" style="font-family: 'Aharoni', sans-serif; color: red;"> <!-- Added big-text class -->
+        LEARN AND DO READING
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md mb-3">
+        <button type="button" class="btn btn-custom btn-block" onclick="location.href='start.html'">
+          <img 
+          src="images/index/worm.png" 
+          alt="Icon" 
+          style="position:absolute;top:-20px;left:80px;width:100px;height:40px;"
+        >START</button>
+      </div>
+      <div class="col-12 col-md-auto mb-3"></div> <!-- Empty column for gap -->
+      <div class="col-12 col-md mb-3">
+        <button type="button" class="btn btn-custom btn-block">
+          <img 
+            src="images/index/rainbow.png" 
+            alt="Icon" 
+            style="position:absolute;top:-50px;left:-15px;width:125px;height:100px;"
+          >
+          CONTACT</button>
+      </div>
+      <div class="col-12 col-md-auto mb-3"></div> <!-- Empty column for gap -->
+      <div class="col-12 col-md mb-3">
+        <button type="button" class="btn btn-custom btn-block">
+          <img 
+            src="images/index/box.png" 
+            alt="Icon" 
+            style="position:absolute;top:-20px;left:-15px;width:100px;height:100px;"
+          >
+          TERMS AND PRIVACY
+          <img 
+          src="images/index/shape.png" 
+          alt="Icon" 
+          style="position:absolute;top:-20px;right:-15px;width:100px;height:100px;"
+        ></button>
+      </div>
+    </div>
   </div>
-  <!-- end header section -->
-  <!-- end client section -->
-
-      <!-- end contact section -->
-      <section class="info_section layout_padding-top">
-        <!-- <div class="info_logo-box">
-          <h2>
-              Fanadesh
-          </h2>
-        </div> -->
-          <div class="container layout_padding2">
-            <div class="row">
-              <div class="col-md-3">
-                <h5>
-                    About Us                                                                             
-                </h5>
-               <p>
-                  dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quisdotempor incididunt r 
-               </p>
-              </div>
-              <div class="col-md-3">
-                <h5>
-                    Useful Link 
-                </h5>
-                <ul>
-                  <li>
-                    <a href="">
-                        Video games
-                    </a>
-                  </li>
-                  <li>
-                   <a href="">
-                      Remote control
-                   </a>
-                  </li>
-                  <li>
-                    <a href="">
-                        3d controller
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <h5>
-                    Contact Us
-                </h5>
-                <p>
-                    dolor sit amet, consectetur magna aliqua. quisdotempor incididunt ut e 
-                </p>
-              </div>
-              <div class="col-md-3">
-           
-                <div class="subscribe_container">
-                  <h5>
-                      Newsletter
-                  </h5>
-                  <div class="form_container">
-                    <form action="">
-                      <input type="email" placeholder="Enter your email">
-                      <button type="submit">
-                        Subscribe
-                      </button>
-                    </form>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-          <div class="container">
-              <div class="social_container">
-                 
-                  <div class="social-box">
-                    <a href="">
-                      <img src="images/fb.png" alt="">
-                    </a>
-      
-                    <a href="">
-                      <img src="images/twitter.png" alt="">
-                    </a>
-                    <a href="">
-                      <img src="images/linkedin.png" alt="">
-                    </a>
-                    <a href="">
-                      <img src="images/instagram.png" alt="">
-                    </a>
-                  </div>
-                </div>
-          </div>
-        </section>
-
-  <!-- footer section -->
-  <section class="container-fluid footer_section">
-    <p>
-      Copyright &copy; 2024 All Rights Reserved By
-      Mae Sarah Manalili
-    </p>
-  </section>
-  <!-- footer section -->
-
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+  </div>
+  </div>
+</body>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 
  
 </body>
