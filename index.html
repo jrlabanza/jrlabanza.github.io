@@ -32,112 +32,130 @@
   <style>
     body {
       background-image: url('images/index/Picture1.jpg');
-      background-size:auto; /* Makes the image cover the entire screen */
-      background-repeat: no-repeat; /* Prevents the image from repeating */
-      background-position: center center; /* Centers the image */
+      background-size: cover;
+      /* Makes the image cover the entire screen */
+      background-repeat: no-repeat;
+      /* Prevents the image from repeating */
+      background-position: center center;
+      /* Centers the image */
       background-color: rgb(43, 218, 104);
     }
+
     .btn-custom {
       background-color: lightpink;
-      border-radius: 35px;      
-      border: solid; /* Remove the outline border */
-      padding: 15px 30px; /* Increase padding to make the button larger */
-      font-size: 2.25rem; /* Increase font size */
+      border-radius: 35px;
+      border: solid;
+      /* Remove the outline border */
+      padding: 15px 30px;
+      /* Increase padding to make the button larger */
+      font-size: 2.25rem;
+      /* Increase font size */
       font-weight: bold;
       width: 100%;
     }
+
     .btn-custom:hover {
-      background-color: #ffccd5; /* Slightly darker pink on hover */
+      background-color: #ffccd5;
+      /* Slightly darker pink on hover */
+    }
+
+    .fixed-bottom-row {
+      padding: 10px 0;
+      /* Optional: padding */
+      z-index: 1000;
+      /* Ensure it stays on top */
+      width: 100%;
+    }
+
+    .full-height-container {
+      height: 70vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    @media (max-width: 767px) {
+
+      /* Mobile devices */
+      .full-height-container {
+        height: auto;
+        display: block;
+        justify-content: initial;
+        align-items: initial;
+      }
     }
 
     @media (min-width: 768px) {
       .big-text {
-        font-size: 120px; /* Adjust as needed */
+        font-size: 120px;
+        /* Adjust as needed */
       }
     }
-    
   </style>
 
 
 </head>
+
 <body>
-  <div class="container">
+  <div class="container container-md">
     <!-- Button Rows -->
     <div class="row justify-content-center mt-5">
       <div class="col-12 col-md mb-3">
         <button type="button" class="btn btn-custom btn-block" onclick="location.href='index.html'">
-          <img 
-            src="images/index/sun.png" 
-            alt="Icon" 
-            style="position:absolute;top:-20px;left:-15px;width:100px;height:100px;"
-          > HOME
+          <img src="images/index/sun.png" alt="Icon"
+            style="position:absolute;top:-20px;left:-15px;width:100px;height:100px;"> HOME
         </button>
       </div>
       <div class="col-12 col-md-auto mb-3"></div> <!-- Empty column for gap -->
       <div class="col-12 col-md mb-3">
         <button type="button" class="btn btn-custom btn-block">
-          <img 
-            src="images/index/arrow.png" 
-            alt="Icon" 
-            style="position:absolute;top:-20px;left:-15px;width:100px;height:100px;"
-          >
+          <img src="images/index/arrow.png" alt="Icon"
+            style="position:absolute;top:-20px;left:-15px;width:100px;height:100px;">
           Coming Soon
-          <img 
-          src="images/index/flower.png" 
-          alt="Icon" 
-          style="position:absolute;top:-20px;right:-15px;width:100px;height:100px;"
-        ></button>
+          <img src="images/index/flower.png" alt="Icon"
+            style="position:absolute;top:-20px;right:-15px;width:100px;height:100px;"></button>
       </div>
       <div class="col-12 col-md-auto mb-3"></div> <!-- Empty column for gap -->
       <div class="col-12 col-md mb-3">
         <button type="button" class="btn btn-custom btn-block">Coming Soon
-          <img 
-          src="images/index/pipe.png" 
-          alt="Icon" 
-          style="position:absolute;top:-20px;right:-30px;width:100px;height:100px;"
-        >
+          <img src="images/index/pipe.png" alt="Icon"
+            style="position:absolute;top:-20px;right:-30px;width:100px;height:100px;">
         </button>
       </div>
     </div>
     <!-- Text Row -->
-    <div class="row justify-content-center mb-3">
-      <div class="col-12 text-center big-text" style="font-family: 'Aharoni', sans-serif; color: red;text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);font-weight: bold"> <!-- Added big-text class -->
-        LEARN AND DO READING
+    <div class="full-height-container">
+      <div class="row justify-content-center mb-3">
+        <div class="col-12 text-center big-text"
+          style="font-family: 'Aharoni', sans-serif; color: red;text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);font-weight: bold">
+          <!-- Added big-text class -->
+          LEARN AND DO READING
+        </div>
       </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center fixed-bottom-row">
       <div class="col-12 col-md mb-3">
         <button type="button" class="btn btn-custom btn-block" onclick="location.href='start.html'">
-          <img 
-          src="images/index/worm.png" 
-          alt="Icon" 
-          style="position:absolute;top:-20px;left:80px;width:100px;height:40px;"
-        >START</button>
+          <img src="images/index/worm.png" alt="Icon"
+            style="position:absolute;top:-20px;left:80px;width:100px;height:40px;">START</button>
       </div>
       <div class="col-12 col-md-auto mb-3"></div> <!-- Empty column for gap -->
       <div class="col-12 col-md mb-3">
         <button type="button" class="btn btn-custom btn-block">
-          <img 
-            src="images/index/rainbow.png" 
-            alt="Icon" 
-            style="position:absolute;top:-50px;left:-15px;width:125px;height:100px;"
-          >
+          <img src="images/index/rainbow.png" alt="Icon"
+            style="position:absolute;top:-50px;left:-15px;width:125px;height:100px;">
           Coming Soon</button>
       </div>
       <div class="col-12 col-md-auto mb-3"></div> <!-- Empty column for gap -->
       <div class="col-12 col-md mb-3">
         <button type="button" class="btn btn-custom btn-block">
-          <img 
-            src="images/index/box.png" 
-            alt="Icon" 
-            style="position:absolute;top:-20px;left:-15px;width:100px;height:100px;"
-          >
+          <img src="images/index/box.png" alt="Icon"
+            style="position:absolute;top:-20px;left:-15px;width:100px;height:100px;">
           Coming Soon
-          <img 
-          src="images/index/shape.png" 
-          alt="Icon" 
-          style="position:absolute;top:-20px;right:-15px;width:100px;height:100px;"
-        ></button>
+          <img src="images/index/shape.png" alt="Icon"
+            style="position:absolute;top:-20px;right:-15px;width:100px;height:100px;"></button>
       </div>
     </div>
   </div>
@@ -147,7 +165,7 @@
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 
- 
+
 </body>
 
 </html>
