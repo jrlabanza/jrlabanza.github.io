@@ -369,12 +369,14 @@ button {
   max-width: 640px;
 }
 
-.stats {
+.hero .stats {
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 24px;
-  margin-top: 88px;
+  margin-top: 96px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .stat {
@@ -1428,10 +1430,11 @@ button {
     height: 112px;
   }
 
-  .stats {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .hero .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 16px;
     margin-top: 64px;
+    padding-top: 32px;
   }
 
   .tiles,
