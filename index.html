@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jorelle Labanza — Software Developer</title>
+  <meta name="description" content="Portfolio of Jorelle Labanza: full-stack web apps, tools for running a room, and generative AI studios. Built straight from the GitHub profile.">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://jrlabanza.github.io/portfolio/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jorelle Labanza — Software Developer">
+  <meta property="og:description" content="Full-stack web apps, tools for running a room, and generative AI studios. All of it on GitHub.">
+  <meta property="og:url" content="https://jrlabanza.github.io/portfolio/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/37989442?v=4">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="gnav" aria-label="Site">
+    <div class="gnav__inner">
+      <a class="gnav__logo" href="#overview" aria-label="Back to top">JL</a>
+      <button class="gnav__toggle" type="button" aria-expanded="false" aria-controls="gnav-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <ul class="gnav__menu" id="gnav-menu">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#focus">Focus</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#repos">All repos</a></li>
+        <li class="gnav__cta"><a class="pill" href="https://github.com/jrlabanza" data-bind="profile-url" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="overview">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <img class="hero__avatar" src="https://avatars.githubusercontent.com/u/37989442?v=4" width="132" height="132" alt="Portrait of Jorelle Labanza" data-bind="avatar">
+      <p class="eyebrow eyebrow--gradient" data-bind="bio">Software Developer</p>
+      <h1 class="display" data-bind="name">Jorelle Labanza.</h1>
+      <p class="intro intro--hero" data-bind="hero-intro">Full-stack developer crafting web apps, tools for running a room, and a growing set of generative AI studios. All of it lives on GitHub.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://github.com/jrlabanza" data-bind="profile-url" target="_blank" rel="noopener">View GitHub profile</a>
+        <a class="link" href="#projects">Explore the work <span class="chev" aria-hidden="true">›</span></a>
+      </div>
+    </div>
+    <div class="wrap stats" id="stats" aria-label="Profile at a glance"></div>
+  </header>
+
+  <main>
+    <section class="section section--fog" id="projects">
+      <div class="wrap wrap--wide">
+        <div class="section__head reveal">
+          <p class="eyebrow">Featured work</p>
+          <h2 class="headline">Built to ship.</h2>
+          <p class="intro">A selection of projects from the profile. Stars, languages and dates come straight from GitHub.</p>
+        </div>
+        <div class="tiles" id="featured"></div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="focus">
+      <div class="wrap wrap--wide">
+        <div class="section__head reveal">
+          <p class="eyebrow">What I build</p>
+          <h2 class="headline">Three lanes.</h2>
+          <p class="intro">Every public repository sorted into the kind of problem it solves.</p>
+        </div>
+        <div class="lanes" id="lanes"></div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="skills">
+      <div class="wrap wrap--wide">
+        <div class="section__head reveal">
+          <p class="eyebrow eyebrow--gradient">Tech specs</p>
+          <h2 class="headline">Under the hood.</h2>
+          <p class="intro">Languages counted across every repository, and the stack behind the work.</p>
+        </div>
+        <div class="specs">
+          <div class="reveal">
+            <h3 class="specs__title">Languages by repository</h3>
+            <ul class="langs" id="languages"></ul>
+          </div>
+          <div class="reveal" id="stack"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="timeline">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">Timeline</p>
+          <h2 class="headline" id="timeline-headline">Years in the making.</h2>
+          <p class="intro">Repositories grouped by the year they were created.</p>
+        </div>
+        <ol class="tl" id="tl"></ol>
+      </div>
+    </section>
+
+    <section class="section section--fog" id="repos">
+      <div class="wrap wrap--wide">
+        <div class="section__head reveal">
+          <p class="eyebrow">Every repository</p>
+          <h2 class="headline">The full list.</h2>
+          <p class="intro">Sorted by most recent activity.</p>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="Filter repositories by language"></div>
+        <div class="repos reveal" id="repo-list"></div>
+      </div>
+    </section>
+
+    <section class="section section--dark cta" id="contact">
+      <div class="wrap reveal">
+        <h2 class="headline">Let’s build something.</h2>
+        <p class="intro">Follow along on GitHub, star a project, or open an issue on anything you see here.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://github.com/jrlabanza" data-bind="profile-url" target="_blank" rel="noopener">Follow on GitHub</a>
+          <a class="link" href="https://github.com/jrlabanza/portfolio" target="_blank" rel="noopener">Source of this site <span class="chev" aria-hidden="true">›</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer__legal" id="footer-legal">Copyright © 2026 Jorelle Labanza. All rights reserved.</p>
+      <p class="footer__note" id="footer-note">Built with plain HTML, CSS and JavaScript. Data comes from the GitHub API and is refreshed automatically.</p>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="https://github.com/jrlabanza" data-bind="profile-url" target="_blank" rel="noopener">GitHub profile</a>
+        <a href="https://github.com/jrlabanza/portfolio" target="_blank" rel="noopener">Site source</a>
+        <a href="#overview">Back to top</a>
+      </nav>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">This page renders its project list with JavaScript. You can browse everything directly on <a href="https://github.com/jrlabanza">github.com/jrlabanza</a>.</p>
+  </noscript>
+
+  <script src="js/data.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
