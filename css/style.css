@@ -372,7 +372,7 @@ button {
 .stats {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 24px;
   margin-top: 88px;
 }
@@ -847,6 +847,109 @@ button {
 }
 
 /* ------------------------------------------------------------------
+   Professional work
+   ------------------------------------------------------------------ */
+.work {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--fog);
+  border-radius: 22px;
+  padding: 30px 28px 26px;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.work-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.work-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.work-card__title {
+  margin: 4px 0 0;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+
+.work-card__title a {
+  color: inherit;
+}
+
+.work-card__desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.work-card__meta {
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 13px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.work-card .chips {
+  margin-top: 2px;
+}
+
+.work-card .chip {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.tag--lock {
+  margin-left: 0;
+  background: var(--paper);
+}
+
+.work__rest {
+  margin-top: 32px;
+}
+
+.work__rest-title {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-3);
+}
+
+.work__more .chip {
+  font-size: 13px;
+  padding: 7px 13px;
+  background: var(--fog);
+  cursor: default;
+}
+
+.tl__repos .tl__work {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 980px;
+  border: 1px solid var(--hairline);
+  color: var(--text-2);
+}
+
+/* ------------------------------------------------------------------
    Focus lanes
    ------------------------------------------------------------------ */
 .lanes {
@@ -858,9 +961,10 @@ button {
 .lane {
   display: flex;
   flex-direction: column;
-  background: var(--fog);
+  background: var(--paper);
   border-radius: var(--radius);
   padding: 40px 34px;
+  box-shadow: var(--shadow);
 }
 
 .lane__icon {
@@ -1283,6 +1387,10 @@ button {
    Responsive
    ------------------------------------------------------------------ */
 @media (max-width: 1068px) {
+  .work {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .tile--wide {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -1326,7 +1434,8 @@ button {
     margin-top: 64px;
   }
 
-  .tiles {
+  .tiles,
+  .work {
     grid-template-columns: 1fr;
   }
 

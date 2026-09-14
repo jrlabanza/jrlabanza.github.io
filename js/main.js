@@ -8,6 +8,12 @@
   var byName = {};
   repos.forEach(function (r) { byName[r.name] = r; });
 
+  // Projects from a second account (js/work.js), minus anything content.js excludes.
+  var W = window.PORTFOLIO_WORK || { owner: null, repos: [] };
+  var workExclude = (C.work && C.work.exclude) || [];
+  var workRepos = (W.repos || []).filter(function (r) { return workExclude.indexOf(r.name) === -1; });
+  var workLabel = (W.owner && W.owner.label) || 'work';
+
   // GitHub linguist colours for the language dots.
   var LANG_COLORS = {
     JavaScript: '#f1e05a', TypeScript: '#3178c6', Python: '#3572A5', HTML: '#e34c26',
@@ -94,7 +100,7 @@
     var wrap = $('#stats');
     if (!wrap) return;
     var langSet = {};
-    repos.forEach(function (r) {
+    repos.concat(workRepos).forEach(function (r) {
       Object.keys(r.languages || {}).forEach(function (l) { langSet[l] = true; });
       if (r.language) langSet[r.language] = true;
     });
@@ -104,6 +110,7 @@
       { n: years, label: 'Years on GitHub' },
       { n: Object.keys(langSet).length, label: 'Languages in use' },
     ];
+    if (workRepos.length) items.splice(1, 0, { n: workRepos.length, label: 'Projects at ' + workLabel });
     items.forEach(function (it) {
       wrap.appendChild(h('div', { class: 'stat reveal' },
         h('span', { class: 'stat__num', 'data-count': it.n, text: '0' }),
@@ -222,6 +229,56 @@
     });
   }
 
+  // ---------------------------------------------------------------- work
+  function renderWork() {
+    var section = $('#work');
+    var nav = $('#nav-work');
+    if (!section || !workRepos.length) return;
+    var cfg = C.work || {};
+    section.hidden = false;
+    if (nav) nav.hidden = false;
+    if (cfg.eyebrow) $('#work-eyebrow').textContent = cfg.eyebrow;
+    if (cfg.headline) $('#work-headline').textContent = cfg.headline;
+    if (cfg.intro) $('#work-intro').textContent = cfg.intro;
+
+    var byWorkName = {};
+    workRepos.forEach(function (r) { byWorkName[r.name] = r; });
+    var grid = $('#work-grid');
+    var shown = {};
+
+    (cfg.featured || []).forEach(function (name) {
+      var r = byWorkName[name];
+      if (!r) return;
+      shown[name] = true;
+      var desc = (cfg.descriptions && cfg.descriptions[name]) || r.description || '';
+      var title = r.private
+        ? h('span', { text: r.name })
+        : h('a', externalLink({ href: r.url, text: r.name }));
+      grid.appendChild(h('article', { class: 'work-card reveal' },
+        h('div', { class: 'work-card__top' },
+          r.language ? h('span', null, dot(r.language), r.language) : h('span'),
+          h('span', { class: 'tag tag--lock', text: r.private ? 'Private' : 'Public' })),
+        h('h3', { class: 'work-card__title' }, title),
+        desc ? h('p', { class: 'work-card__desc', text: desc }) : null,
+        h('div', { class: 'work-card__meta', text: (r.fork ? 'Fork · ' : '') + 'Updated ' + monthYear(r.pushedAt) })));
+    });
+
+    var rest = workRepos.filter(function (r) { return !shown[r.name]; });
+    if (rest.length) {
+      var chips = h('div', { class: 'chips work__more' });
+      rest.forEach(function (r) {
+        chips.appendChild(h('span', {
+          class: 'chip',
+          title: r.description || '',
+          text: r.name + (r.language ? ' · ' + r.language : ''),
+        }));
+      });
+      section.querySelector('.wrap').appendChild(h('div', { class: 'work__rest reveal' },
+        h('h3', { class: 'work__rest-title', text: 'And ' + rest.length + ' more in the account' }),
+        chips));
+    }
+  }
+
   // ---------------------------------------------------------------- lanes
   var ICONS = {
     sparkle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg>',
@@ -256,7 +313,7 @@
     if (list) {
       var counts = {};
       var bytes = {};
-      repos.forEach(function (r) {
+      repos.concat(workRepos).forEach(function (r) {
         var langs = Object.keys(r.languages || {});
         if (!langs.length && r.language) langs = [r.language];
         langs.forEach(function (l) {
@@ -425,6 +482,7 @@
   renderHero();
   renderStats();
   renderFeatured();
+  renderWork();
   renderLanes();
   renderSkills();
   renderTimeline();

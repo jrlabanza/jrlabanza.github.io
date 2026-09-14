@@ -6,7 +6,57 @@ window.PORTFOLIO_CONTENT = {
       'Full-stack developer crafting web apps, tools for running a room, and a growing set of generative AI studios. All of it lives on GitHub.',
   },
 
-  // Repositories shown as large tiles. `repo` must match a repository name.
+  // Projects from a second GitHub account (see scripts/fetch-work.mjs and js/work.js).
+  work: {
+    eyebrow: 'Professional work',
+    headline: 'Built at Parallaxx.',
+    intro:
+      'Internal tools and platforms from the Parallaxx GitHub account: temporary traffic management engineering, risk engines, GIS, data platforms and AI agent tooling. The repositories are private, so this is the summary view.',
+    // Shown as cards, in this order. Everything else in js/work.js is listed compactly below them.
+    featured: [
+      'agentic-dashboard',
+      'skill-builder',
+      'project-nexus',
+      'trace',
+      'basemap-builder',
+      'tmp-warehouse',
+      'ttm-lowest-total-risk-calculator',
+      'taper-calculator',
+      'parallaxx-cad-block-generator',
+      'parallaxx-scoro-mcp',
+      'risk-interaction-detection-tool',
+      'permanent-road-safety-barrier-designer',
+    ],
+    // Throwaway, test and cloned repositories that should not appear at all.
+    exclude: [
+      'agentic-remote-test-DELETE-ME-1777869877',
+      'ultracode-demo',
+      'pxx-infrastructure-contracts-db-clone',
+    ],
+    // Overrides keyed by repository name. Used for cards whose GitHub description is missing or terse.
+    descriptions: {
+      'agentic-dashboard':
+        'Parallaxx Agent Command Center: a web dashboard for managing Claude Code agentic workflows.',
+      'skill-builder':
+        'A guided wizard that turns an employee’s Azure AD profile and answers into ready-to-use AI agent and skill definitions for Claude, ChatGPT, Gemini and Copilot.',
+      'project-nexus': 'Parallaxx HRIS, built on Next.js 16 and Postgres.',
+      trace: 'TRACE, the TTM Risk Assessment and Control Engine. An internal Parallaxx tool.',
+      'basemap-builder':
+        'Browser-based builder for simplified vector basemaps and infographics for NZ Traffic Management Plans.',
+      'tmp-warehouse':
+        'A structured TMP data platform that turns 13+ years of Traffic Management Plan records into a queryable, analytically rich data asset.',
+      'ttm-lowest-total-risk-calculator': 'TTM Lowest Total Risk Calculator. An internal Parallaxx tool.',
+      'taper-calculator': 'Taper calculator. An internal Parallaxx tool.',
+      'parallaxx-cad-block-generator':
+        'CAD block generator: automated drawing components for traffic management plans.',
+      'parallaxx-scoro-mcp':
+        'MCP server connecting Copilot Studio agents to the Scoro API for estimate creation and data queries.',
+      'risk-interaction-detection-tool': 'Risk interaction detection tool. A Parallaxx AI project.',
+      'permanent-road-safety-barrier-designer': 'Designer for permanent road safety barriers.',
+    },
+  },
+
+  // Repositories shown as large tiles. The repo field must match a repository name.
   featured: [
     {
       repo: 'jrlabanza-image-generator-core',
@@ -126,8 +176,8 @@ window.PORTFOLIO_CONTENT = {
     2022: 'PIPE, a React-based performance improvement plan system, and an Angular starter.',
     2023: 'A group fork of Floppy Bird.',
     2024: 'A static site published on GitHub Pages.',
-    2025: 'Exploring voice model training with a Tortoise TTS fork.',
-    2026: 'The generative AI year: six Forge Neo extensions, a complete image studio, LAN trivia, a tournament platform and party tools.',
+    2025: 'Exploring voice model training with a Tortoise TTS fork, and the first Parallaxx internal tools: a risk engine with its TTM risk database and interface.',
+    2026: 'The generative AI year: six Forge Neo extensions, a complete image studio, LAN trivia, a tournament platform and party tools. At Parallaxx: TRACE, the HRIS, the basemap builder and the agent command center.',
   },
 
   // Fallback descriptions for repositories that have none on GitHub.

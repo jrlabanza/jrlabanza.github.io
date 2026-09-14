@@ -32,6 +32,7 @@
       <ul class="gnav__menu" id="gnav-menu">
         <li><a href="#overview">Overview</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li id="nav-work" hidden><a href="#work">Work</a></li>
         <li><a href="#focus">Focus</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#timeline">Timeline</a></li>
@@ -68,7 +69,18 @@
       </div>
     </section>
 
-    <section class="section section--paper" id="focus">
+    <section class="section section--paper" id="work" hidden>
+      <div class="wrap wrap--wide">
+        <div class="section__head reveal">
+          <p class="eyebrow" id="work-eyebrow">Professional work</p>
+          <h2 class="headline" id="work-headline">Built at work.</h2>
+          <p class="intro" id="work-intro"></p>
+        </div>
+        <div class="work" id="work-grid"></div>
+      </div>
+    </section>
+
+    <section class="section section--fog" id="focus">
       <div class="wrap wrap--wide">
         <div class="section__head reveal">
           <p class="eyebrow">What I build</p>
@@ -112,7 +124,7 @@
         <div class="section__head reveal">
           <p class="eyebrow">Every repository</p>
           <h2 class="headline">The full list.</h2>
-          <p class="intro">Sorted by most recent activity.</p>
+          <p class="intro">Every public repository on the profile, sorted by most recent activity.</p>
         </div>
         <div class="filters" id="filters" role="group" aria-label="Filter repositories by language"></div>
         <div class="repos reveal" id="repo-list"></div>
@@ -148,6 +160,7 @@
   </noscript>
 
   <script src="js/data.js"></script>
+  <script src="js/work.js"></script>
   <script src="js/content.js"></script>
   <script src="js/main.js"></script>
 </body>
