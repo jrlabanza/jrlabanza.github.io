@@ -111,8 +111,10 @@
       { n: Object.keys(langSet).length, label: 'Languages in use' },
     ];
     if (workRepos.length) items.splice(1, 0, { n: workRepos.length, label: 'Projects at ' + workLabel });
+    // The hero is always the first screen, so the stats render immediately
+    // rather than waiting for the scroll-reveal observer.
     items.forEach(function (it) {
-      wrap.appendChild(h('div', { class: 'stat reveal' },
+      wrap.appendChild(h('div', { class: 'stat' },
         h('span', { class: 'stat__num', 'data-count': it.n, text: '0' }),
         h('span', { class: 'stat__label', text: it.label })));
     });
@@ -460,19 +462,13 @@
     var els = $$('.reveal');
     if (!('IntersectionObserver' in window)) {
       els.forEach(function (el) { el.classList.add('in'); });
-      animateCounters();
       return;
     }
-    var countersDone = false;
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('in');
         io.unobserve(entry.target);
-        if (!countersDone && entry.target.classList.contains('stat')) {
-          countersDone = true;
-          animateCounters();
-        }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     els.forEach(function (el) { io.observe(el); });
@@ -490,4 +486,5 @@
   renderFooter();
   initNav();
   initReveal();
+  animateCounters();
 })();
