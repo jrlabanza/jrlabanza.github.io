@@ -1,7 +1,8 @@
 # Portfolio
 
 An Apple-inspired portfolio for [github.com/jrlabanza](https://github.com/jrlabanza), published at
-**https://jrlabanza.github.io/portfolio/**.
+**https://jrlabanza.github.io/**. The previous site that lived at this address is kept on the
+`legacy-reading-site` branch.
 
 Plain HTML, CSS and JavaScript. No build step, no framework, no dependencies.
 
