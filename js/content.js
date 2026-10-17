@@ -3,7 +3,7 @@
 window.PORTFOLIO_CONTENT = {
   hero: {
     intro:
-      'Full-stack developer crafting web apps, tools for running a room, and a growing set of generative AI studios. All of it lives on GitHub.',
+      'Full-stack developer building a local AI studio suite - image, voice, video and music, sharing one 8 GB graphics card - alongside web apps and tools for running a room.',
   },
 
   // Projects from a second GitHub account (see scripts/fetch-work.mjs and js/work.js).
@@ -56,18 +56,28 @@ window.PORTFOLIO_CONTENT = {
     },
   },
 
-  // Repositories shown as large tiles. The repo field must match a repository name.
+  // Repositories shown as large tiles. The repo field must match a public repository name
+  // (private repositories are not in js/data.js, so their tiles would not render).
   featured: [
     {
-      repo: 'jrlabanza-image-generator-core',
-      title: 'Jrlabanza Image Generator.',
-      tagline: 'A one-person AI art studio.',
+      repo: 'ai-studio-hub',
+      title: 'AI Studio Hub.',
+      tagline: 'Five local AI studios. One 8 GB graphics card.',
       body:
-        'A React 19 Studio served by Stable Diffusion WebUI Forge Neo: one floating prompt bar, live preview while rendering, a Library that reads prompts back out of your output folder, Edit, Vary and Remix on every image, unattended Boards, and a Quick Select deck of around 4,900 toggleable chips. Underneath sit 18 tool pages, including Auto Pilot, Director and a LoRA trainer.',
-      stack: ['Python', 'React 19', 'Vite', 'SDXL', 'Forge Neo'],
-      visual: 'studio',
+        'One home for my own studios: Image (Qwen-Image-2.1 and Iris-3B Turbo), Voice (Qwen3-TTS, Chatterbox and Fish Audio Drama-3 for directed multi-speaker scenes), Video (LTX-2.5 and MiniMax H3, with storyboards, extend and a built-in editor), Music (YuE2) and Forge. The hub starts each one on demand in its own Docker container, hands the GPU from studio to studio so a laptop card keeps working, and gathers everything they make into one library.',
+      stack: ['Python', 'FastAPI', 'Docker', 'ComfyUI', 'React', 'CUDA'],
+      visual: 'hub',
       wide: true,
       theme: 'dark',
+    },
+    {
+      repo: 'music-generator',
+      title: 'Music Studio.',
+      tagline: 'Lyrics and a style in. A full song out.',
+      body:
+        'YuE2 music generation with symbolic planning: write the lyrics and the style, edit the score it plans, then render the whole song with vocals on an 8 or 16 GB card. Part of the AI Studio Hub.',
+      stack: ['Python', 'PyTorch', 'YuE2', 'Docker'],
+      visual: 'music',
     },
     {
       repo: 'bracket.gg',
@@ -113,9 +123,11 @@ window.PORTFOLIO_CONTENT = {
     {
       title: 'Generative AI.',
       body:
-        'Extensions and studios for Stable Diffusion WebUI Forge Neo: prompt building, reference images, IP-Adapter fixes, LoRA training and an end-to-end image generator.',
+        'A local studio suite for image, voice, video and music that shares one graphics card, and the Forge Neo extensions it grew out of: prompt building, reference images, IP-Adapter fixes and LoRA training.',
       icon: 'sparkle',
       repos: [
+        'ai-studio-hub',
+        'music-generator',
         'jrlabanza-image-generator-core',
         'forge-neo-toolkit',
         'sd-prompt-enhancer',
@@ -160,12 +172,12 @@ window.PORTFOLIO_CONTENT = {
 
   stack: [
     { group: 'Front end', items: ['React', 'Next.js', 'Vite', 'HTML', 'CSS', 'TypeScript'] },
-    { group: 'Back end', items: ['Node.js', 'Python', 'MySQL', 'ASP.NET', 'C#'] },
+    { group: 'Back end', items: ['Python', 'FastAPI', 'Node.js', 'MySQL', 'ASP.NET', 'C#'] },
     {
       group: 'Generative AI',
-      items: ['Stable Diffusion', 'SDXL', 'LoRA', 'IP-Adapter', 'ONNX', 'PyTorch', 'CUDA'],
+      items: ['ComfyUI', 'MiniMax H3', 'LTX-2.5', 'Qwen-Image', 'Qwen3-TTS', 'Stable Diffusion', 'LoRA', 'PyTorch', 'CUDA'],
     },
-    { group: 'Ops and tooling', items: ['Docker', 'PM2', 'systemd', 'Shell', 'PowerShell', 'Batch'] },
+    { group: 'Ops and tooling', items: ['Docker', 'Docker Compose', 'Linux', 'systemd', 'PM2', 'Shell', 'PowerShell'] },
   ],
 
   // One line per year. Years without a line still render with their repositories.
@@ -177,11 +189,14 @@ window.PORTFOLIO_CONTENT = {
     2023: 'A group fork of Floppy Bird.',
     2024: 'A static site published on GitHub Pages.',
     2025: 'Exploring voice model training with a Tortoise TTS fork, and the first Parallaxx internal tools: a risk engine with its TTM risk database and interface.',
-    2026: 'The generative AI year: six Forge Neo extensions, a complete image studio, LAN trivia, a tournament platform and party tools. At Parallaxx: TRACE, the HRIS, the basemap builder and the agent command center.',
+    2026: 'The generative AI year: Forge Neo extensions and an image studio, then the AI Studio Hub - image, voice, video and music studios sharing one 8 GB card, on Windows and in Docker on Linux. Also LAN trivia, a tournament platform and party tools. At Parallaxx: TRACE, the HRIS, the basemap builder and the agent command center.',
   },
 
   // Fallback descriptions for repositories that have none on GitHub.
   descriptions: {
+    'ai-studio-hub':
+      'One home for local AI studios - image, voice, video, music and Forge - sharing one graphics card.',
+    'music-generator': 'YuE2 songs from lyrics and a style, with an editable score.',
     'jrlabanza-image-generator-core':
       'A one-person AI art studio built on Stable Diffusion WebUI Forge Neo.',
     'forge-neo-toolkit':

@@ -32,5 +32,6 @@ npx serve .                          # or any static file server, then open http
 ## Featuring a project
 
 Add an entry to `featured` in `js/content.js` with the repository name, a title, a tagline, a
-short body and a `visual` key (`studio`, `bracket`, `trivia`, `prompt`, `lora`, or leave it out
-for a plain tile). Stars, language and last-updated date fill in automatically.
+short body and a `visual` key (`hub`, `music`, `studio`, `bracket`, `trivia`, `prompt`, `lora`, or leave it out
+for a plain tile). Stars, language and last-updated date fill in automatically. Only public repositories
+can be featured: the data comes from the public API, so a private repository's tile is skipped.
