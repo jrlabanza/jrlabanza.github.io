@@ -64,7 +64,7 @@ window.PORTFOLIO_CONTENT = {
       title: 'AI Studio Hub.',
       tagline: 'Five local AI studios, one 8 GB card - and a Sandbox to share what you build.',
       body:
-        'One home for my own studios: Image (Qwen-Image-2.1 and Iris-3B Turbo), Voice (Qwen3-TTS, Chatterbox and Fish Audio Drama-3 for directed multi-speaker scenes), Video (LTX-2.5 and MiniMax H3, with storyboards, an automatic quality check, off-screen voice lines and a built-in editor), Music (YuE2) and Forge. The hub starts each one on demand in its own Docker container and runs every heavy job through one GPU queue, so a laptop card never runs out of memory. The Sandbox lets anyone in the team upload a tool they built with ChatGPT or Gemini, edit it in the browser and publish it to its own versioned link, isolated from the hub and recorded end to end.',
+        'One home for my own studios: Image (Qwen-Image-2.1 and Iris-3B Turbo), Voice (Qwen3-TTS, Chatterbox and Fish Audio Drama-3 for directed multi-speaker scenes), Video (LTX-2.5 and MiniMax H3, with storyboards, an automatic quality check, off-screen voice lines and a built-in editor), Music (YuE2) and Forge. The hub starts each one on demand in its own Docker container and runs every heavy job through one GPU queue, so a laptop card never runs out of memory. The Sandbox lets anyone in the team upload a tool they built with ChatGPT or Gemini, edit it in the browser and publish it to its own versioned link, isolated from the hub and recorded end to end. New users get a guided tour of the hub and of every studio, offered on their first visit and replayable from a Tours page.',
       stack: ['Python', 'FastAPI', 'Docker', 'ComfyUI', 'React', 'CUDA'],
       visual: 'hub',
       wide: true,
