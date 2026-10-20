@@ -62,9 +62,9 @@ window.PORTFOLIO_CONTENT = {
     {
       repo: 'ai-studio-hub',
       title: 'AI Studio Hub.',
-      tagline: 'Five local AI studios. One 8 GB graphics card.',
+      tagline: 'Five local AI studios, one 8 GB card - and a Sandbox to share what you build.',
       body:
-        'One home for my own studios: Image (Qwen-Image-2.1 and Iris-3B Turbo), Voice (Qwen3-TTS, Chatterbox and Fish Audio Drama-3 for directed multi-speaker scenes), Video (LTX-2.5 and MiniMax H3, with storyboards, extend and a built-in editor), Music (YuE2) and Forge. The hub starts each one on demand in its own Docker container, hands the GPU from studio to studio so a laptop card keeps working, and gathers everything they make into one library.',
+        'One home for my own studios: Image (Qwen-Image-2.1 and Iris-3B Turbo), Voice (Qwen3-TTS, Chatterbox and Fish Audio Drama-3 for directed multi-speaker scenes), Video (LTX-2.5 and MiniMax H3, with storyboards, an automatic quality check, off-screen voice lines and a built-in editor), Music (YuE2) and Forge. The hub starts each one on demand in its own Docker container and runs every heavy job through one GPU queue, so a laptop card never runs out of memory. The Sandbox lets anyone in the team upload a tool they built with ChatGPT or Gemini, edit it in the browser and publish it to its own versioned link, isolated from the hub and recorded end to end.',
       stack: ['Python', 'FastAPI', 'Docker', 'ComfyUI', 'React', 'CUDA'],
       visual: 'hub',
       wide: true,
@@ -189,7 +189,7 @@ window.PORTFOLIO_CONTENT = {
     2023: 'A group fork of Floppy Bird.',
     2024: 'A static site published on GitHub Pages.',
     2025: 'Exploring voice model training with a Tortoise TTS fork, and the first Parallaxx internal tools: a risk engine with its TTM risk database and interface.',
-    2026: 'The generative AI year: Forge Neo extensions and an image studio, then the AI Studio Hub - image, voice, video and music studios sharing one 8 GB card, on Windows and in Docker on Linux. Also LAN trivia, a tournament platform and party tools. At Parallaxx: TRACE, the HRIS, the basemap builder and the agent command center.',
+    2026: 'The generative AI year: Forge Neo extensions and an image studio, then the AI Studio Hub - image, voice, video and music studios sharing one 8 GB card, on Windows and in Docker on Linux, plus a Sandbox for publishing a team\'s AI-built tools. Also LAN trivia, a tournament platform and party tools. At Parallaxx: TRACE, the HRIS, the basemap builder and the agent command center.',
   },
 
   // Fallback descriptions for repositories that have none on GitHub.

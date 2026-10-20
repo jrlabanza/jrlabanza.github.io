@@ -142,12 +142,12 @@
   var VISUALS = {
     hub: function () {
       var studios = [['01', 'Image', 'Qwen-Image · Iris'], ['02', 'Voice', 'Qwen3-TTS · Drama-3'], ['03', 'Video', 'LTX-2.5 · MiniMax H3'],
-        ['04', 'Music', 'YuE2'], ['05', 'Forge', 'Forge Neo']];
+        ['04', 'Music', 'YuE2'], ['05', 'Forge', 'Forge Neo'], ['06', 'Sandbox', 'publish · /tool1']];
       var list = h('div', { class: 'viz-hub__list', 'aria-hidden': 'true' });
       studios.forEach(function (s, i) {
         list.appendChild(h('div', { class: 'viz-hub__row' + (i === 2 ? ' is-on' : '') },
           h('span', { class: 'viz-hub__num', text: s[0] }), h('b', { text: s[1] }), h('span', { class: 'viz-hub__model', text: s[2] }),
-          h('i', { text: i === 2 ? 'on GPU' : 'ready' })));
+          h('i', { text: i === 2 ? 'on GPU' : i === 5 ? 'live' : 'ready' })));
       });
       return h('div', { class: 'viz-hub' }, list,
         h('div', { class: 'viz-hub__gpu', 'aria-hidden': 'true' }, h('span', { text: '8 GB GPU' }), h('div', null, h('div')), h('span', { text: 'Video Studio' })));
